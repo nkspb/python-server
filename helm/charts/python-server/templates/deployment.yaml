@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: python-server
   labels:
-    app: pg-app
-  name: pg-app
+    app: python-server
+    name: python-server
 spec:
   replicas: 1
   selector:
@@ -15,7 +16,7 @@ spec:
         app: python-server
     spec:
       containers:
-          image: nkom/python-server:{{ .Values.appVersion }}
+        - image: nkom/python-server:{{ .Values.appVersion }}
           name: python-server
           ports:
             - containerPort: 8080
