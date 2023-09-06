@@ -1,5 +1,5 @@
 apiVersion: v2
-name: pythone-server
+name: python-server
 description: A Helm chart for python-server
 
 version: 1.0
